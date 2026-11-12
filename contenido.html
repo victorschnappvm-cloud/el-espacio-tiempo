@@ -1,176 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Espacio Tiempo | Tiempo en Planetas y Agujeros Negros</title>
-  <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido - El Espacio Tiempo</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo-link">
-        <span class="logo-emoji">💙✨</span>
-        <div class="logo-texto">
-          <span class="logo-titulo">El Espacio Tiempo</span>
-          <span class="logo-subtitulo">Relatividad, Cosmos y Viajes Temporales</span>
-        </div>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="contenido.html" class="activo">Tiempo y Agujeros Negros</a></li>
-        <li><a href="informacion.html">Científicos y Teorías</a></li>
-        <li><a href="contacto.html">Cuestionario y Contacto</a></li>
-      </ul>
-      <form class="search-bar" onsubmit="buscarTema(event)">
-        <input type="text" id="inputBusqueda" placeholder="Buscar tema..." aria-label="Buscar tema">
-        <button type="submit">🔍</button>
-      </form>
-    </nav>
-  </header>
-  <main>
-    <section class="hero" id="planetas">
-      <div>
-        <span class="badge-tema">⏱️ Dilataci&oacute;n y Rotaci&oacute;n C&oacute;smica</span>
-        <h1>El Tiempo en Otros Planetas</h1>
-        <p class="intro-texto">
-          Creemos que un d&iacute;a dura 24 horas, pero eso es solo una costumbre terrestre. Cada planeta gira a su propio ritmo y posee una masa distinta que curva el espacio-tiempo a su alrededor.
-        </p>
-        <div class="grupo-botones">
-          <a href="#agujeros-negros" class="btn btn-primario">Ir a Agujeros Negros &darr;</a>
-          <a href="#simulador" class="btn btn-secundario">Probar Calculadora Temporal</a>
-        </div>
-      </div>
-      <div class="marco-imagen">
-        <img src="imagenes/astronauta-planetas.png" alt="Astronauta mirando el tiempo en distintos planetas">
-      </div>
-    </section>
 
-    <section class="seccion">
-      <h2>Comparativa del Tiempo en el Sistema Solar</h2>
-      <p>Observa c&oacute;mo cambia la duraci&oacute;n de un d&iacute;a (rotaci&oacute;n) y un a&ntilde;o (&oacute;rbita) seg&uacute;n el mundo donde te encuentres:</p>
-      <div class="tabla-contenedor">
-        <table>
-          <thead>
-            <tr>
-              <th>Planeta</th>
-              <th>Duraci&oacute;n de 1 D&iacute;a</th>
-              <th>Duraci&oacute;n de 1 A&ntilde;o</th>
-              <th>Dato Curioso del Tiempo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Mercurio</strong></td>
-              <td>58.6 d&iacute;as terrestres</td>
-              <td>88 d&iacute;as terrestres</td>
-              <td>Un amanecer a otro tarda casi 176 d&iacute;as terrestres.</td>
-            </tr>
-            <tr>
-              <td><strong>Venus</strong></td>
-              <td>243 d&iacute;as terrestres</td>
-              <td>225 d&iacute;as terrestres</td>
-              <td>&iexcl;Un d&iacute;a en Venus es m&aacute;s largo que todo su a&ntilde;o!</td>
-            </tr>
-            <tr>
-              <td><strong>Tierra</strong></td>
-              <td>23 horas 56 min</td>
-              <td>365.25 d&iacute;as</td>
-              <td>Nuestro punto de referencia de 24 horas.</td>
-            </tr>
-            <tr>
-              <td><strong>Marte</strong></td>
-              <td>24 horas 37 min</td>
-              <td>687 d&iacute;as terrestres</td>
-              <td>Su d&iacute;a (llamado &laquo;Sol&raquo;) es casi id&eacute;ntico al nuestro.</td>
-            </tr>
-            <tr>
-              <td><strong>J&uacute;piter</strong></td>
-              <td>9 horas 55 min</td>
-              <td>11.86 a&ntilde;os terrestres</td>
-              <td>Es el planeta m&aacute;s r&aacute;pido en girar sobre s&iacute; mismo.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <header>
+        <h1>🪐 Exploración de Planetas</h1>
+        <p>El tejido del espacio-tiempo alrededor de mundos lejanos</p>
+    </header>
 
-      <div class="simulador-box" id="simulador">
-        <h3>🧮 Calculadora de Edad y Tiempo en Otros Mundos</h3>
-        <p>Escribe tu edad en a&ntilde;os terrestres para descubrir cu&aacute;ntos a&ntilde;os tendr&iacute;as en otro planeta:</p>
-        <div class="simulador-controles">
-          <input type="number" id="edadTierra" value="17" min="1" max="120" aria-label="Edad en la Tierra">
-          <select id="planetaSelect" aria-label="Selecciona un planeta">
-            <option value="0.24">Mercurio (A&ntilde;o de 88 d&iacute;as)</option>
-            <option value="0.615">Venus (A&ntilde;o de 225 d&iacute;as)</option>
-            <option value="1.88">Marte (A&ntilde;o de 687 d&iacute;as)</option>
-            <option value="11.86">J&uacute;piter (A&ntilde;o de 11.86 a&ntilde;os)</option>
-          </select>
-          <button type="button" class="btn btn-primario" onclick="calcularEdadPlaneta()">Calcular Tiempo</button>
+    <div class="ventanas-grid">
+        <div class="ventana">
+            <div class="img-ventana">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#64B5F6" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+            </div>
+            <h3>Dilatación Temporal</h3>
+            <p>La gravedad extrema de los cuerpos celestes masivos deforma el tiempo, haciendo que transcurra más lento en comparación con el espacio exterior.</p>
         </div>
-        <div class="resultado-simulador" id="resultadoPlaneta">
-          Con 17 a&ntilde;os en la Tierra, en Mercurio ya habr&iacute;as celebrado 70.8 cumplea&ntilde;os.
-        </div>
-      </div>
-    </section>
 
-    <section class="seccion" id="agujeros-negros">
-      <h2>🕳️ &iquest;Qu&eacute; onda con los Agujeros Negros?</h2>
-      <div class="hero">
-        <div class="marco-imagen">
-          <img src="imagenes/agujero-negro.png" alt="Astronauta observando un agujero negro y un reloj detenido">
+        <div class="ventana">
+            <div class="img-ventana">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2196F3" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Calculadora de Edad Cósmica</h3>
+            <p>Dependiendo del planeta donde habitaras, tus años tendrían una duración totalmente distinta debido a la traslación orbital.</p>
+            <button class="btn-ventana" onclick="alert('¡Próximamente conexión en tiempo real con la base orbital!')">Calcular Edad</button>
         </div>
-        <div>
-          <h3>Gravedad extrema que congela los relojes</h3>
-          <p class="intro-texto">
-            Un agujero negro es una regi&oacute;n del espacio donde una enorme cantidad de masa est&aacute; concentrada en un punto diminuto llamado <strong>singularidad</strong>. Su gravedad es tan intensa que ni siquiera la luz puede escapar una vez que cruza el <strong>horizonte de sucesos</strong>.
-          </p>
-          <p class="intro-texto">
-            Seg&uacute;n la Relatividad General de Einstein, la gravedad no es solo una fuerza: es la curvatura del espacio-tiempo. Mientras m&aacute;s cerca est&eacute;s de un agujero negro, <strong>m&aacute;s lento avanza tu reloj</strong> respecto a alguien en la Tierra. Pasar 3 horas orbitando cerca de un agujero negro supermasivo podr&iacute;a equivaler a m&aacute;s de 20 a&ntilde;os en nuestro planeta.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="navegacion-pie">
-      <a href="index.html" class="btn btn-secundario">&larr; Bot&oacute;n Regresar (Inicio)</a>
-      <a href="informacion.html" class="btn btn-primario">Bot&oacute;n Siguiente (Cient&iacute;ficos y Teor&iacute;as) &rarr;</a>
     </div>
-  </main>
 
-  <script>
-    function calcularEdadPlaneta() {
-      var edad = parseFloat(document.getElementById('edadTierra').value);
-      var factor = parseFloat(document.getElementById('planetaSelect').value);
-      var select = document.getElementById('planetaSelect');
-      var nombre = select.options[select.selectedIndex].text.split(' ')[0];
-      if (isNaN(edad) || edad <= 0) {
-        document.getElementById('resultadoPlaneta').textContent = 'Ingresa una edad valida mayor a 0.';
-        return;
-      }
-      var nuevaEdad = (edad / factor).toFixed(1);
-      document.getElementById('resultadoPlaneta').textContent =
-        'Con ' + edad + ' anos en la Tierra, en ' + nombre + ' tendrias aproximadamente ' + nuevaEdad + ' anos planetarios.';
-    }
-  </script>
-  <footer>
-    <p>💙✨ <span>El Espacio Tiempo</span> &mdash; Proyecto Web Escolar de Exploraci&oacute;n C&oacute;smica (2026)</p>
-  </footer>
+    <a href="index.html" class="btn-volver">← Volver al Inicio</a>
 
-  <script>
-    function buscarTema(e) {
-      e.preventDefault();
-      var q = document.getElementById('inputBusqueda').value.toLowerCase().trim();
-      if (!q) return;
-      if (q.includes('agujero') || q.includes('planeta') || q.includes('tiempo')) {
-        window.location.href = 'contenido.html';
-      } else if (q.includes('einstein') || q.includes('hawking') || q.includes('thorne') || q.includes('teoria') || q.includes('viaj')) {
-        window.location.href = 'informacion.html';
-      } else if (q.includes('cuestionario') || q.includes('contacto') || q.includes('pregunta')) {
-        window.location.href = 'contacto.html';
-      } else {
-        alert('Explora nuestras secciones: Tiempo en Planetas, Agujeros Negros, Cientificos o Cuestionario.');
-      }
-    }
-  </script>
 </body>
-                    </html>
+</html>
