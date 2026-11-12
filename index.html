@@ -3,314 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Espacio Tiempo | Exploración Cósmica</title>
+    <title>El Espacio Tiempo | Inicio</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <canvas id="starfield"></canvas>
-
-    <header class="hud-header">
-        <div class="hud-badge">SISTEMA DE EXPLORACIÓN CÓSMICA</div>
+    <header>
+        <div class="hud-badge">MISIÓN CÓSMICA 2026</div>
         <h1>EL ESPACIO TIEMPO</h1>
-        <p>Selecciona un módulo para desplegar su ventana interactiva</p>
+        <p>¿El tiempo es una ilusión absoluta o una dimensión física maleable?</p>
     </header>
 
-    <form class="terminal-search" onsubmit="ejecutarBusqueda(event)">
-        <input type="text" id="campoBusqueda" placeholder="Escribe: planetas, agujero negro, relatividad, quiz...">
-        <button type="submit">ABRIR</button>
-    </form>
+    <main class="main-panel">
+        <div class="content-grid">
+            <div class="text-content">
+                <p><strong>INTRODUCCIÓN ESTELAR:</strong> Estamos acostumbrados a regirnos por relojes fijos de 24 horas, creyendo que el tiempo transcurre exactamente al mismo ritmo en todo el universo. Sin embargo, la física moderna demuestra que el tejido cósmico es flexible.</p>
+                <p>Cerca de campos gravitatorios colosales o viajando a velocidades cercanas a la luz, el tiempo se deforma de manera radical. Prepárate para navegar por los misterios del cosmos.</p>
+            </div>
+            <div class="image-frame">
+                <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=600" alt="Nebulosa y Espacio">
+            </div>
+        </div>
 
-    <!-- Ventanas principales -->
-    <main class="windows-container">
-
-        <!-- VENTANA 1: PLANETAS Y CALCULADORA -->
-        <section class="sci-window">
-            <div class="window-topbar">
-                <div class="window-dots"><span></span><span></span><span></span></div>
-                <span class="window-tag">MÓDULO 01 // ÓRBITAS</span>
-            </div>
-            <div class="visual-stage">
-                <!-- Ilustración SVG Planeta Gaseoso con Anillos y Lunas -->
-                <svg class="floating-svg" width="170" height="140" viewBox="0 0 200 160">
-                    <defs>
-                        <radialGradient id="planetGrad" cx="35%" cy="35%" r="65%">
-                            <stop offset="0%" stop-color="#7dd3fc"/>
-                            <stop offset="45%" stop-color="#0284c7"/>
-                            <stop offset="100%" stop-color="#0f172a"/>
-                        </radialGradient>
-                        <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="rgba(56,189,248,0)"/>
-                            <stop offset="30%" stop-color="rgba(125,211,252,0.8)"/>
-                            <stop offset="70%" stop-color="rgba(59,130,246,0.8)"/>
-                            <stop offset="100%" stop-color="rgba(56,189,248,0)"/>
-                        </linearGradient>
-                    </defs>
-                    <ellipse cx="100" cy="82" rx="85" ry="22" fill="none" stroke="url(#ringGrad)" stroke-width="8" transform="rotate(-18 100 82)"/>
-                    <circle cx="100" cy="80" r="44" fill="url(#planetGrad)"/>
-                    <path d="M 30 98 Q 100 122 170 64" fill="none" stroke="url(#ringGrad)" stroke-width="7" stroke-linecap="round"/>
-                    <circle cx="165" cy="35" r="5" fill="#bae6fd"/>
-                    <circle cx="38" cy="125" r="3" fill="#38bdf8"/>
-                </svg>
-            </div>
-            <div class="window-body">
-                <div>
-                    <h2>Tiempo en los Planetas</h2>
-                    <p>Cada mundo gira a distinta velocidad alrededor del Sol. Descubre cómo cambia tu edad según la gravedad y traslación planetaria.</p>
-                </div>
-                <button class="action-btn" onclick="abrirVentana('modal-planetas')">DESPLEGAR VENTANA</button>
-            </div>
-        </section>
-
-        <!-- VENTANA 2: AGUJEROS NEGROS Y RELATIVIDAD -->
-        <section class="sci-window">
-            <div class="window-topbar">
-                <div class="window-dots"><span></span><span></span><span></span></div>
-                <span class="window-tag">MÓDULO 02 // SINGULARIDAD</span>
-            </div>
-            <div class="visual-stage">
-                <!-- Ilustración SVG Agujero Negro con Disco de Acreción -->
-                <svg class="floating-svg" width="180" height="140" viewBox="0 0 200 160">
-                    <defs>
-                        <radialGradient id="accretionGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.9"/>
-                            <stop offset="60%" stop-color="#1d4ed8" stop-opacity="0.4"/>
-                            <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
-                        </radialGradient>
-                    </defs>
-                    <circle cx="100" cy="80" r="70" fill="url(#accretionGlow)"/>
-                    <ellipse cx="100" cy="80" rx="82" ry="18" fill="none" stroke="#7dd3fc" stroke-width="4" opacity="0.85"/>
-                    <ellipse cx="100" cy="80" rx="64" ry="12" fill="none" stroke="#38bdf8" stroke-width="2"/>
-                    <circle cx="100" cy="80" r="30" fill="#000000" stroke="#38bdf8" stroke-width="2.5"/>
-                    <path d="M 68 80 A 32 32 0 0 1 132 80" fill="none" stroke="#bae6fd" stroke-width="3"/>
-                </svg>
-            </div>
-            <div class="window-body">
-                <div>
-                    <h2>Agujeros Negros y Teorías</h2>
-                    <p>Explora la relatividad general de Einstein, la radiación de Hawking y cómo la gravedad extrema detiene el reloj del universo.</p>
-                </div>
-                <button class="action-btn" onclick="abrirVentana('modal-agujeros')">DESPLEGAR VENTANA</button>
-            </div>
-        </section>
-
-        <!-- VENTANA 3: SIMULADOR, QUIZ Y CONTACTO -->
-        <section class="sci-window">
-            <div class="window-topbar">
-                <div class="window-dots"><span></span><span></span><span></span></div>
-                <span class="window-tag">MÓDULO 03 // TERMINAL</span>
-            </div>
-            <div class="visual-stage">
-                <!-- Ilustración SVG Nave / Radar Cuántico -->
-                <svg class="floating-svg" width="170" height="140" viewBox="0 0 200 160">
-                    <circle cx="100" cy="80" r="55" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-dasharray="6 4"/>
-                    <circle cx="100" cy="80" r="36" fill="none" stroke="#0284c7" stroke-width="1.5"/>
-                    <polygon points="100,32 118,95 100,83 82,95" fill="#38bdf8"/>
-                    <polygon points="100,32 118,95 100,83" fill="#0284c7"/>
-                    <ellipse cx="100" cy="108" rx="10" ry="16" fill="#7dd3fc" opacity="0.7"/>
-                    <circle cx="145" cy="45" r="4" fill="#38bdf8"/>
-                    <circle cx="52" cy="110" r="4" fill="#6366f1"/>
-                </svg>
-            </div>
-            <div class="window-body">
-                <div>
-                    <h2>Quiz Estelar y Bitácora</h2>
-                    <p>Pon a prueba tus conocimientos sobre el cosmos con nuestro test interactivo o envía una transmisión directa a la base.</p>
-                </div>
-                <button class="action-btn" onclick="abrirVentana('modal-terminal')">DESPLEGAR VENTANA</button>
-            </div>
-        </section>
-
+        <div class="btn-group">
+            <a href="contenido.html" class="sci-btn">⏱️ VER CONTENIDO CÓSMICO</a>
+            <a href="informacion.html" class="sci-btn secondary">🔬 TEORÍAS Y FÍSICA</a>
+        </div>
     </main>
 
-    <!-- VENTANA EMERGENTE 1: PLANETAS Y CALCULADORA -->
-    <div id="modal-planetas" class="modal-overlay" onclick="cerrarSiFuera(event, 'modal-planetas')">
-        <div class="modal-card">
-            <div class="window-topbar">
-                <span class="window-tag">VENTANA ACTIVA // DILATACIÓN ORBITAL</span>
-                <button class="close-btn" onclick="cerrarVentana('modal-planetas')">CERRAR ✕</button>
-            </div>
-            <div class="modal-content">
-                <h3>El Tejido del Espacio-Tiempo</h3>
-                <p>Albert Einstein demostró que el espacio y el tiempo no son rígidos, sino una malla flexible. Cuanto más masivo es un planeta o más rápido orbita, más se altera la percepción de los años.</p>
-                
-                <div class="calc-box">
-                    <label>Calcula tu edad en otro mundo:</label>
-                    <input type="number" id="edadTierra" placeholder="Escribe tu edad en años (ej. 16)" min="1" max="120">
-                    <select id="planetaDestino">
-                        <option value="0.24">Mercurio (1 año = 88 días)</option>
-                        <option value="0.62">Venus (1 año = 225 días)</option>
-                        <option value="1.88">Marte (1 año = 687 días)</option>
-                        <option value="11.86">Júpiter (1 año = 11.8 años terrestres)</option>
-                        <option value="29.45">Saturno (1 año = 29.4 años terrestres)</option>
-                    </select>
-                    <button class="action-btn" onclick="calcularEdadPlaneta()">CALCULAR EDAD CÓSMICA</button>
-                    <div id="resultadoEdad" class="result-display">Ingresa tu edad arriba para iniciar el cálculo.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- VENTANA EMERGENTE 2: AGUJEROS NEGROS Y VIAJES EN EL TIEMPO -->
-    <div id="modal-agujeros" class="modal-overlay" onclick="cerrarSiFuera(event, 'modal-agujeros')">
-        <div class="modal-card">
-            <div class="window-topbar">
-                <span class="window-tag">VENTANA ACTIVA // SINGULARIDADES</span>
-                <button class="close-btn" onclick="cerrarVentana('modal-agujeros')">CERRAR ✕</button>
-            </div>
-            <div class="modal-content">
-                <h3>Agujeros Negros y Dilatación Temporal</h3>
-                <p>En el borde de un agujero negro —conocido como <strong>Horizonte de Sucesos</strong>— la gravedad es tan colosal que curva el tiempo casi hasta detenerlo. Una hora cerca de un agujero negro supermasivo puede equivaler a varios años en la Tierra.</p>
-                
-                <div class="calc-box">
-                    <label>Simulador: Horas cerca del Agujero Negro Gargantúa</label>
-                    <input type="number" id="horasAgujero" placeholder="Horas en órbita cercana (ej. 2)" min="1">
-                    <button class="action-btn" onclick="simularAgujero()">SIMULAR SALTO TEMPORAL</button>
-                    <div id="resultadoAgujero" class="result-display">1 hora cerca de la singularidad equivale a 7 años terrestres.</div>
-                </div>
-
-                <p style="margin-top: 15px;"><strong>Puentes de Einstein-Rosen:</strong> Son túneles teóricos en el espacio-tiempo que conectarían dos puntos distantes del universo, permitiendo atajos cósmicos.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- VENTANA EMERGENTE 3: QUIZ Y CONTACTO -->
-    <div id="modal-terminal" class="modal-overlay" onclick="cerrarSiFuera(event, 'modal-terminal')">
-        <div class="modal-card">
-            <div class="window-topbar">
-                <span class="window-tag">VENTANA ACTIVA // TERMINAL DE MISIÓN</span>
-                <button class="close-btn" onclick="cerrarVentana('modal-terminal')">CERRAR ✕</button>
-            </div>
-            <div class="modal-content">
-                <h3>Quiz de Física Cósmica</h3>
-                <p>1. ¿Qué científico propuso que la gravedad es la curvatura del espacio-tiempo?</p>
-                <button class="quiz-option" onclick="responderQuiz(true, this)">A) Albert Einstein</button>
-                <button class="quiz-option" onclick="responderQuiz(false, this)">B) Isaac Newton</button>
-                <button class="quiz-option" onclick="responderQuiz(false, this)">C) Galileo Galilei</button>
-                <div id="feedbackQuiz" class="result-display" style="margin-bottom: 20px;">Selecciona una respuesta.</div>
-
-                <h3>Enviar Reporte a la Base</h3>
-                <div class="calc-box">
-                    <form onsubmit="enviarMensaje(event)">
-                        <input type="text" placeholder="Nombre del explorador" required>
-                        <input type="email" placeholder="Correo de contacto" required>
-                        <textarea rows="2" placeholder="Escribe tu teoría o comentario..." required></textarea>
-                        <button type="submit" class="action-btn">TRANSMITIR MENSAJE</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        /* Fondo animado de estrellas */
-        const canvas = document.getElementById('starfield');
-        const ctx = canvas.getContext('2d');
-        let stars = [];
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            stars = Array.from({ length: 140 }, () => ({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                r: Math.random() * 1.6 + 0.3,
-                speed: Math.random() * 0.4 + 0.1
-            }));
-        }
-
-        function animateStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#bae6fd';
-            stars.forEach(s => {
-                ctx.beginPath();
-                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-                ctx.fill();
-                s.y += s.speed;
-                if (s.y > canvas.height) {
-                    s.y = 0;
-                    s.x = Math.random() * canvas.width;
-                }
-            });
-            requestAnimationFrame(animateStars);
-        }
-
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        animateStars();
-
-        /* Control de Ventanas Modales */
-        function abrirVentana(id) {
-            document.getElementById(id).classList.add('active');
-        }
-
-        function cerrarVentana(id) {
-            document.getElementById(id).classList.remove('active');
-        }
-
-        function cerrarSiFuera(e, id) {
-            if (e.target.id === id) cerrarVentana(id);
-        }
-
-        /* Buscador que abre directo la ventana correspondiente */
-        function ejecutarBusqueda(e) {
-            e.preventDefault();
-            const q = document.getElementById('campoBusqueda').value.toLowerCase().trim();
-            if (!q) return;
-            if (q.includes('planeta') || q.includes('edad') || q.includes('marte') || q.includes('jupiter')) {
-                abrirVentana('modal-planetas');
-            } else if (q.includes('agujero') || q.includes('einstein') || q.includes('hawking') || q.includes('tiempo') || q.includes('relatividad')) {
-                abrirVentana('modal-agujeros');
-            } else {
-                abrirVentana('modal-terminal');
-            }
-        }
-
-        /* Calculadora Planetaria */
-        function calcularEdadPlaneta() {
-            const edad = parseFloat(document.getElementById('edadTierra').value);
-            const factor = parseFloat(document.getElementById('planetaDestino').value);
-            const res = document.getElementById('resultadoEdad');
-            if (!edad || edad <= 0) {
-                res.textContent = "Por favor escribe una edad válida.";
-                return;
-            }
-            const nuevaEdad = (edad / factor).toFixed(2);
-            res.textContent = `En ese planeta tendrías ${nuevaEdad} años orbitales.`;
-        }
-
-        /* Simulador Agujero Negro */
-        function simularAgujero() {
-            const horas = parseFloat(document.getElementById('horasAgujero').value);
-            const res = document.getElementById('resultadoAgujero');
-            if (!horas || horas <= 0) {
-                res.textContent = "Ingresa una cantidad de horas válida.";
-                return;
-            }
-            const aniosTierra = (horas * 7).toFixed(1);
-            res.textContent = `Si pasas ${horas} horas ahí, en la Tierra habrán transcurrido ${aniosTierra} años.`;
-        }
-
-        /* Quiz Interactivo */
-        function responderQuiz(esCorrecta, boton) {
-            const fb = document.getElementById('feedbackQuiz');
-            if (esCorrecta) {
-                boton.style.borderColor = '#22c55e';
-                boton.style.background = 'rgba(34, 197, 94, 0.25)';
-                fb.textContent = "¡Correcto! La Relatividad General explica la curvatura del espacio-tiempo.";
-            } else {
-                boton.style.borderColor = '#ef4444';
-                boton.style.background = 'rgba(239, 68, 68, 0.25)';
-                fb.textContent = "Incorrecto. Pista: formuló la Teoría de la Relatividad en 1915.";
-            }
-        }
-
-        /* Formulario */
-        function enviarMensaje(e) {
-            e.preventDefault();
-            alert("¡Transmisión recibida en la estación orbital! Gracias por explorar El Espacio Tiempo.");
-            e.target.reset();
-        }
-    </script>
 </body>
 </html>
