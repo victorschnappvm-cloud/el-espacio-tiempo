@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Espacio Tiempo | Inicio</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <span class="logo-emoji">💙✨</span>
+        <div class="logo-texto">
+          <span class="logo-titulo">El Espacio Tiempo</span>
+          <span class="logo-subtitulo">Relatividad, Cosmos y Viajes Temporales</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="contenido.html">Tiempo y Agujeros Negros</a></li>
+        <li><a href="informacion.html">Científicos y Teorías</a></li>
+        <li><a href="contacto.html">Cuestionario y Contacto</a></li>
+      </ul>
+      <form class="search-bar" onsubmit="buscarTema(event)">
+        <input type="text" id="inputBusqueda" placeholder="Buscar tema..." aria-label="Buscar tema">
+        <button type="submit">🔍</button>
+      </form>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="badge-tema">💙✨ Exploraci&oacute;n del Universo y la Relatividad</span>
+        <h1>El Espacio Tiempo</h1>
+        <p class="subtitulo-hero">Cuando un reloj deja de marcar 24 horas y el universo dobla la realidad</p>
+        <p class="intro-texto">
+          Creemos que un d&iacute;a dura 24 horas, pero eso es solo en la Tierra. &iquest;Est&aacute;s listo para descubrir que el tiempo que tenemos aqu&iacute; no es el mismo que en otros planetas, que incluso puedes envejecer en 3 horas cerca de un agujero negro o viajar en el tiempo seg&uacute;n la f&iacute;sica moderna?
+        </p>
+        <div class="grupo-botones">
+          <a href="contenido.html" class="btn btn-primario">⏱️ Tiempo y Agujeros Negros</a>
+          <a href="informacion.html" class="btn btn-secundario">🔭 Teor&iacute;as y Cient&iacute;ficos</a>
+          <a href="contacto.html" class="btn btn-secundario">📝 Cuestionario y Contacto</a>
+        </div>
+      </div>
+      <div class="marco-imagen">
+        <img src="imagenes/astronauta-inicio.png" alt="Astronauta observando un reloj c&oacute;smico en el espacio">
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2>&iquest;Qu&eacute; vas a descubrir en este sitio?</h2>
+      <div class="grid-tarjetas">
+        <article class="tarjeta">
+          <h3>🪐 El Tiempo en Otros Planetas</h3>
+          <p>En Venus un solo d&iacute;a dura m&aacute;s que todo su a&ntilde;o, mientras que en J&uacute;piter el d&iacute;a apenas alcanza las 9 horas con 55 minutos. La gravedad y la rotaci&oacute;n cambian las reglas.</p>
+          <br>
+          <a href="contenido.html#planetas" class="btn btn-secundario">Explorar Planetas</a>
+        </article>
+        <article class="tarjeta">
+          <h3>🕳️ &iquest;Qu&eacute; pasa en los Agujeros Negros?</h3>
+          <p>Su gravedad es tan monstruosa que deforma el tejido del espacio-tiempo. Si te acercaras al horizonte de sucesos, ver&iacute;as pasar siglos en el exterior en cuesti&oacute;n de horas.</p>
+          <br>
+          <a href="contenido.html#agujeros-negros" class="btn btn-secundario">Ver Agujeros Negros</a>
+        </article>
+        <article class="tarjeta">
+          <h3>🚀 Cient&iacute;ficos y Viajes en el Tiempo</h3>
+          <p>Desde Albert Einstein hasta Stephen Hawking y Kip Thorne: conoce las teor&iacute;as reales sobre dilataci&oacute;n temporal, agujeros de gusano y viajes hacia el futuro.</p>
+          <br>
+          <a href="informacion.html" class="btn btn-secundario">Conocer Cient&iacute;ficos</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="caja-filosofica">
+      <h3>💭 Pregunta Filos&oacute;fica del Cosmos</h3>
+      <p>
+        &laquo;Si el tiempo transcurre m&aacute;s lento cuando viajas cerca de la velocidad de la luz o frente a una gravedad extrema, &iquest;el tiempo es una regla fija del universo o simplemente una ilusi&oacute;n de nuestra perspectiva humana?&raquo;
+      </p>
+      <div class="grupo-botones">
+        <a href="contacto.html" class="btn btn-primario">Responder en el Cuestionario &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>💙✨ <span>El Espacio Tiempo</span> &mdash; Proyecto Web Escolar de Exploraci&oacute;n C&oacute;smica (2026)</p>
+  </footer>
+
+  <script>
+    function buscarTema(e) {
+      e.preventDefault();
+      var q = document.getElementById('inputBusqueda').value.toLowerCase().trim();
+      if (!q) return;
+      if (q.includes('agujero') || q.includes('planeta') || q.includes('tiempo')) {
+        window.location.href = 'contenido.html';
+      } else if (q.includes('einstein') || q.includes('hawking') || q.includes('thorne') || q.includes('teoria') || q.includes('viaj')) {
+        window.location.href = 'informacion.html';
+      } else if (q.includes('cuestionario') || q.includes('contacto') || q.includes('pregunta')) {
+        window.location.href = 'contacto.html';
+      } else {
+        alert('Explora nuestras secciones: Tiempo en Planetas, Agujeros Negros, Cientificos o Cuestionario.');
+      }
+    }
+  </script>
+</body>
+  </html>
