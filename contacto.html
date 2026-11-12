@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto y Quiz - El Espacio Tiempo</title>
+    <title>Contacto y Quiz | El Espacio Tiempo</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
     <header>
-        <h1>🚀 Central de Misión</h1>
-        <p>Contacto y Cuestionario Estelar</p>
+        <div class="hud-badge">CENTRAL DE MISIÓN</div>
+        <h1>EVALUACIÓN CÓSMICA</h1>
+        <p>Pon a prueba tus conocimientos sobre el universo</p>
     </header>
 
-    <div class="ventanas-grid">
-        <div class="ventana">
-            <h3>Envía tu Mensaje</h3>
-            <p>¿Tienes dudas sobre el cosmos? Escríbenos directamente desde la base.</p>
-            <form onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito al espacio exterior! 🌌');" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
-                <input type="text" placeholder="Tu Nombre" required style="padding: 10px; border-radius: 8px; border: 1px solid #1E88E5; background: #071320; color: #fff;">
-                <input type="email" placeholder="Correo electrónico" required style="padding: 10px; border-radius: 8px; border: 1px solid #1E88E5; background: #071320; color: #fff;">
-                <button type="submit" class="btn-ventana">Transmitir</button>
-            </form>
-        </div>
-
-        <div class="ventana">
-            <h3>Cuestionario Cósmico</h3>
-            <p>¿Qué ocurre cerca del horizonte de sucesos de un agujero negro?</p>
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
-                <button class="btn-ventana" onclick="alert('¡Correcto! La gravedad es tan fuerte que atrapa la luz.')">A) La luz queda atrapada</button>
-                <button class="btn-ventana" onclick="alert(' Incorrecto. Intenta de nuevo.')">B) El tiempo se acelera infinitamente</button>
+    <main class="main-panel">
+        <form onsubmit="alert('¡Transmisión completada con éxito! Has finalizado la misión estelar 🌌💙'); window.location.href='index.html'; return false;">
+            
+            <div class="card-box">
+                <p class="quiz-question">1. ¿Qué provoca que el tiempo transcurra más lento en ciertas regiones?</p>
+                <label class="quiz-option"><input type="radio" name="p1" required> Gravedad intensa o velocidades lumínicas.</label>
+                <label class="quiz-option"><input type="radio" name="p1"> La falta de atmósfera en órbita.</label>
             </div>
-        </div>
-    </div>
 
-    <a href="index.html" class="btn-volver">← Volver al Inicio</a>
+            <div class="card-box">
+                <p class="quiz-question">2. Si pasas 3 horas cerca de un agujero negro masivo, ¿qué ocurre en la Tierra?</p>
+                <label class="quiz-option"><input type="radio" name="p2" required> Transcurren décadas enteras mientras envejeces poco.</label>
+                <label class="quiz-option"><input type="radio" name="p2"> Pasan exactamente 3 horas idénticas.</label>
+            </div>
+
+            <div class="btn-group">
+                <a href="informacion.html" class="sci-btn secondary">⬅️ TEORÍAS</a>
+                <button type="submit" class="sci-btn">ENVIAR RESPUESTAS 🚀</button>
+            </div>
+        </form>
+    </main>
 
 </body>
 </html>
