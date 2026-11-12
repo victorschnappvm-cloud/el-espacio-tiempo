@@ -3,38 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información | El Espacio Tiempo</title>
+    <title>Teorías y Científicos - Espacio Tiempo</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <header>
-        <div class="hud-badge">REGISTROS HISTÓRICOS</div>
-        <h1>MENTES MAESTRAS</h1>
-        <p>Los científicos que descifraron las leyes ocultas del cosmos</p>
+    <header class="navbar">
+        <div class="menu-icon">☰</div>
+        <div class="brand-title">ESPACIO-TIEMPO 💙✨</div>
+        <div class="search-box">
+            <input type="text" placeholder="Buscar...">
+            <span class="search-btn">🔍</span>
+        </div>
+        <div class="user-icon">👤</div>
     </header>
 
-    <main class="main-panel">
-        <div class="card-box">
-            <h3>⚡ Albert Einstein (Relatividad General)</h3>
-            <p>Demostró que el espacio y el tiempo están fusionados en un tejido de 4 dimensiones. La masa de los astros deforma este tejido, generando la gravedad que mantiene unida la galaxia.</p>
-        </div>
+    <main class="main-container">
+        <section class="screen">
+            <h2>TEORÍAS Y CIENTÍFICOS</h2>
+            <p class="section-desc">Conoce a las mentes que descifraron las leyes ocultas del cosmos 💙✨</p>
 
-        <div class="card-box">
-            <h3>🌌 Stephen Hawking (Termodinámica Cuántica)</h3>
-            <p>Investigó los límites del espacio-tiempo en las singularidades y demostró cómo los agujeros negros emiten radiación, estableciendo la dirección irreversible de la flecha del tiempo.</p>
-        </div>
+            <div class="card-list">
+                <!-- Científico 1 -->
+                <div class="item-card">
+                    <div class="thumb-box">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=200" alt="Albert Einstein">
+                    </div>
+                    <div class="card-info">
+                        <h3>ALBERT EINSTEIN</h3>
+                        <p><strong>Relatividad Especial y General:</strong> Demostró que el espacio y el tiempo forman un tejido de 4 dimensiones curvado por la masa y la gravedad.</p>
+                    </div>
+                    <a href="einstein.html" class="btn-small">LEER TEORÍA</a>
+                </div>
 
-        <div class="card-box">
-            <h3>📐 Hendrik Lorentz (Transformaciones)</h3>
-            <p>Estableció las bases matemáticas de cómo los objetos se contraen y el tiempo se estira cuando nos aproximamos a la velocidad límite de la luz.</p>
-        </div>
+                <!-- Científico 2 -->
+                <div class="item-card">
+                    <div class="thumb-box">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200" alt="Stephen Hawking">
+                    </div>
+                    <div class="card-info">
+                        <h3>STEPHEN HAWKING</h3>
+                        <p><strong>Agujeros Negros y la Flecha del Tiempo:</strong> Analizó la termodinámica del universo y por qué el tiempo solo avanza hacia adelante.</p>
+                    </div>
+                    <a href="hawking.html" class="btn-small">LEER TEORÍA</a>
+                </div>
 
-        <div class="btn-group">
-            <a href="contenido.html" class="sci-btn secondary">⬅️ CONTENIDO</a>
-            <a href="contacto.html" class="sci-btn">IR AL CUESTIONARIO 🚀</a>
-        </div>
+                <!-- Científico 3 -->
+                <div class="item-card">
+                    <div class="thumb-box">
+                        <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=200" alt="Hendrik Lorentz">
+                    </div>
+                    <div class="card-info">
+                        <h3>HENDRIK LORENTZ</h3>
+                        <p><strong>Transformaciones de Lorentz:</strong> Formuló las matemáticas exactas que explican la dilatación del tiempo a altas velocidades.</p>
+                    </div>
+                    <a href="lorentz.html" class="btn-small">LEER TEORÍA</a>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <a href="contenido.html" class="btn btn-secondary">⬅️ REGRESAR A CONTENIDO</a>
+                <a href="contacto.html" class="btn btn-blue">IR AL CUESTIONARIO 🧠</a>
+            </div>
+        </section>
     </main>
-
 </body>
 </html>
