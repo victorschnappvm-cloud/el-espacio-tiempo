@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Espacio Tiempo | Cuestionario y Contacto</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <span class="logo-emoji">💙✨</span>
+        <div class="logo-texto">
+          <span class="logo-titulo">El Espacio Tiempo</span>
+          <span class="logo-subtitulo">Relatividad, Cosmos y Viajes Temporales</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="contenido.html">Tiempo y Agujeros Negros</a></li>
+        <li><a href="informacion.html">Científicos y Teorías</a></li>
+        <li><a href="contacto.html" class="activo">Cuestionario y Contacto</a></li>
+      </ul>
+      <form class="search-bar" onsubmit="buscarTema(event)">
+        <input type="text" id="inputBusqueda" placeholder="Buscar tema..." aria-label="Buscar tema">
+        <button type="submit">🔍</button>
+      </form>
+    </nav>
+  </header>
+  <main>
+    <section class="seccion">
+      <span class="badge-tema">📝 Pon a prueba tu mente c&oacute;smica</span>
+      <h1>Cuestionario del Espacio-Tiempo y Contacto</h1>
+      <p class="intro-texto">
+        Responde las preguntas basadas en las teor&iacute;as de los cient&iacute;ficos o env&iacute;anos tu propia teor&iacute;a filos&oacute;fica sobre los viajes en el tiempo.
+      </p>
+
+      <div class="grid-tarjetas">
+        <div class="tarjeta">
+          <h2>🧠 Mini Cuestionario C&oacute;smico</h2>
+          <form id="formCuestionario" onsubmit="evaluarQuiz(event)">
+            <div class="formulario-grupo">
+              <label for="p1">1. &iquest;En qu&eacute; planeta un d&iacute;a dura m&aacute;s que su propio a&ntilde;o?</label>
+              <select id="p1" required>
+                <option value="">-- Selecciona una respuesta --</option>
+                <option value="marte">Marte</option>
+                <option value="venus">Venus</option>
+                <option value="jupiter">J&uacute;piter</option>
+              </select>
+            </div>
+
+            <div class="formulario-grupo">
+              <label for="p2">2. &iquest;Qu&eacute; ocurre con el tiempo cerca de un agujero negro?</label>
+              <select id="p2" required>
+                <option value="">-- Selecciona una respuesta --</option>
+                <option value="rapido">Pasa mucho m&aacute;s r&aacute;pido que en la Tierra</option>
+                <option value="lento">Transcurre m&aacute;s lento por la gravedad extrema</option>
+                <option value="igual">No cambia absolutamente nada</option>
+              </select>
+            </div>
+
+            <div class="formulario-grupo">
+              <label for="p3">3. &iquest;Qui&eacute;n formul&oacute; la Teor&iacute;a de la Relatividad?</label>
+              <select id="p3" required>
+                <option value="">-- Selecciona una respuesta --</option>
+                <option value="einstein">Albert Einstein</option>
+                <option value="newton">Isaac Newton</option>
+                <option value="galileo">Galileo Galilei</option>
+              </select>
+            </div>
+
+            <div class="grupo-botones">
+              <button type="submit" class="btn btn-primario">Calificar Cuestionario</button>
+              <button type="reset" class="btn btn-secundario" onclick="limpiarQuiz()">Cerrar / Limpiar</button>
+            </div>
+          </form>
+          <div id="resultadoQuiz" class="alerta-exito"></div>
+        </div>
+
+        <div class="tarjeta">
+          <h2>✉️ Formulario de Contacto Estelar</h2>
+          <form id="formContacto" onsubmit="enviarMensaje(event)">
+            <div class="formulario-grupo">
+              <label for="nombre">Nombre completo:</label>
+              <input type="text" id="nombre" placeholder="Ej. Valentina Garc&iacute;a" required>
+            </div>
+
+            <div class="formulario-grupo">
+              <label for="correo">Correo electr&oacute;nico:</label>
+              <input type="email" id="correo" placeholder="tu.correo@ejemplo.com" required>
+            </div>
+
+            <div class="formulario-grupo">
+              <label for="temaFavorito">Tema favorito del espacio-tiempo:</label>
+              <select id="temaFavorito">
+                <option value="Planetas">Tiempo en otros planetas</option>
+                <option value="Agujeros Negros">Agujeros negros y singularidades</option>
+                <option value="Viajes en el tiempo">Teor&iacute;as de viaje en el tiempo</option>
+                <option value="Cientificos">Cient&iacute;ficos del cosmos</option>
+              </select>
+            </div>
+
+            <div class="formulario-grupo">
+              <label for="mensaje">Tu pregunta filos&oacute;fica o comentario:</label>
+              <textarea id="mensaje" rows="4" placeholder="Escribe aqu&iacute; si viajar&iacute;as al pasado o al futuro..." required></textarea>
+            </div>
+
+            <div class="grupo-botones">
+              <button type="submit" class="btn btn-primario">Enviar Mensaje 💙✨</button>
+              <button type="reset" class="btn btn-secundario">Borrar Campos</button>
+            </div>
+          </form>
+
+          <div id="mensajeGracias" class="alerta-exito">
+            <h3>💙✨ &iexcl;GRACIAS POR EXPLORAR EL ESPACIO TIEMPO!</h3>
+            <p id="textoGracias"></p>
+            <br>
+            <a href="index.html" class="btn btn-primario">Volver al Inicio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="navegacion-pie">
+      <a href="informacion.html" class="btn btn-secundario">&larr; Volver a Cient&iacute;ficos</a>
+      <a href="index.html" class="btn btn-primario">Volver al Inicio 💙✨</a>
+    </div>
+  </main>
+
+  <script>
+    function evaluarQuiz(e) {
+      e.preventDefault();
+      var puntos = 0;
+      if (document.getElementById('p1').value === 'venus') puntos++;
+      if (document.getElementById('p2').value === 'lento') puntos++;
+      if (document.getElementById('p3').value === 'einstein') puntos++;
+      var caja = document.getElementById('resultadoQuiz');
+      caja.style.display = 'block';
+      caja.innerHTML = '<strong>💙✨ Resultado: ' + puntos + ' de 3 aciertos.</strong><br>' +
+        (puntos === 3 ? 'Excelente! Dominas las leyes del espacio-tiempo.' : 'Sigue explorando las secciones de Planetas y Cientificos para lograr el 3/3.');
+    }
+
+    function limpiarQuiz() {
+      document.getElementById('resultadoQuiz').style.display = 'none';
+    }
+
+    function enviarMensaje(e) {
+      e.preventDefault();
+      var nombre = document.getElementById('nombre').value;
+      var tema = document.getElementById('temaFavorito').value;
+      var caja = document.getElementById('mensajeGracias');
+      document.getElementById('textoGracias').textContent =
+        'Hola ' + nombre + ', hemos recibido tu mensaje sobre "' + tema + '". Gracias por visitar nuestro proyecto.';
+      caja.style.display = 'block';
+    }
+  </script>
+  <footer>
+    <p>💙✨ <span>El Espacio Tiempo</span> &mdash; Proyecto Web Escolar de Exploraci&oacute;n C&oacute;smica (2026)</p>
+  </footer>
+
+  <script>
+    function buscarTema(e) {
+      e.preventDefault();
+      var q = document.getElementById('inputBusqueda').value.toLowerCase().trim();
+      if (!q) return;
+      if (q.includes('agujero') || q.includes('planeta') || q.includes('tiempo')) {
+        window.location.href = 'contenido.html';
+      } else if (q.includes('einstein') || q.includes('hawking') || q.includes('thorne') || q.includes('teoria') || q.includes('viaj')) {
+        window.location.href = 'informacion.html';
+      } else if (q.includes('cuestionario') || q.includes('contacto') || q.includes('pregunta')) {
+        window.location.href = 'contacto.html';
+      } else {
+        alert('Explora nuestras secciones: Tiempo en Planetas, Agujeros Negros, Cientificos o Cuestionario.');
+      }
+    }
+  </script>
+</body>
+            </html>
