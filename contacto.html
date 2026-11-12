@@ -3,38 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto y Quiz | El Espacio Tiempo</title>
+    <title>Cuestionario Cósmico - Espacio Tiempo</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <header>
-        <div class="hud-badge">CENTRAL DE MISIÓN</div>
-        <h1>EVALUACIÓN CÓSMICA</h1>
-        <p>Pon a prueba tus conocimientos sobre el universo</p>
+    <header class="navbar">
+        <div class="menu-icon">☰</div>
+        <div class="brand-title">ESPACIO-TIEMPO 💙✨</div>
+        <div class="search-box">
+            <input type="text" placeholder="Buscar...">
+            <span class="search-btn">🔍</span>
+        </div>
+        <div class="user-icon">👤</div>
     </header>
 
-    <main class="main-panel">
-        <form onsubmit="alert('¡Transmisión completada con éxito! Has finalizado la misión estelar 🌌💙'); window.location.href='index.html'; return false;">
+    <main class="main-container">
+        
+        <!-- FORMULARIO DE CUESTIONARIO -->
+        <section id="quiz-section" class="screen">
+            <h2>CUESTIONARIO DEL ESPACIO-TIEMPO 🧠💙✨</h2>
+            <p class="section-desc">Demuestra qué tanto comprendiste sobre los misterios del cosmos y la relatividad.</p>
+
+            <form id="quiz-form" onsubmit="evaluarQuiz(event)">
+                <div class="quiz-item">
+                    <p class="question">1. ¿Qué provoca principalmente que el tiempo transcurra más lento en ciertas regiones del universo?</p>
+                    <label class="quiz-option"><input type="radio" name="p1" value="a" required> La radiación de las lunas vecinas.</label>
+                    <label class="quiz-option"><input type="radio" name="p1" value="b"> Campos gravitatorios intensos o velocidades cercanas a la luz.</label>
+                    <label class="quiz-option"><input type="radio" name="p1" value="c"> La falta de atmósfera en el espacio exterior.</label>
+                </div>
+
+                <div class="quiz-item">
+                    <p class="question">2. Si pasas 3 horas cerca de un agujero negro masivo, ¿qué ocurre en la Tierra?</p>
+                    <label class="quiz-option"><input type="radio" name="p2" value="a" required> Pasan exactamente 3 horas también.</label>
+                    <label class="quiz-option"><input type="radio" name="p2" value="b"> Transcurren décadas enteras en la Tierra mientras tú envejeces solo unas horas.</label>
+                    <label class="quiz-option"><input type="radio" name="p2" value="c"> El tiempo en la Tierra se detiene por completo.</label>
+                </div>
+
+                <div class="quiz-item">
+                    <p class="question">3. ¿Cómo se le denomina al fenómeno físico donde el tiempo cambia de ritmo según la gravedad o velocidad?</p>
+                    <label class="quiz-option"><input type="radio" name="p3" value="a" required> Dilatación Temporal.</label>
+                    <label class="quiz-option"><input type="radio" name="p3" value="b"> Inercia Cuántica Estática.</label>
+                    <label class="quiz-option"><input type="radio" name="p3" value="c"> Refracción Dimensional.</label>
+                </div>
+
+                <div class="quiz-item">
+                    <p class="question">4. ¿Qué científico propuso la teoría de que el espacio y el tiempo forman un tejido de 4 dimensiones?</p>
+                    <label class="quiz-option"><input type="radio" name="p4" value="a" required> Isaac Newton.</label>
+                    <label class="quiz-option"><input type="radio" name="p4" value="b"> Albert Einstein.</label>
+                    <label class="quiz-option"><input type="radio" name="p4" value="c"> Galileo Galilei.</label>
+                </div>
+
+                <div class="quiz-item">
+                    <p class="question">5. ¿Qué representa el horizonte de sucesos en un agujero negro?</p>
+                    <label class="quiz-option"><input type="radio" name="p5" value="a" required> El punto de no retorno donde ni la luz puede escapar.</label>
+                    <label class="quiz-option"><input type="radio" name="p5" value="b"> El límite donde el tiempo avanza al doble de velocidad.</label>
+                    <label class="quiz-option"><input type="radio" name="p5" value="c"> La capa exterior de gas brillante de una estrella.</label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-blue">ENVIAR RESPUESTAS 🚀</button>
+                    <a href="informacion.html" class="btn btn-secondary">CANCELAR</a>
+                </div>
+            </form>
+        </section>
+
+        <!-- PANTALLA DE GRACIAS (Oculta hasta enviar) -->
+        <section id="gracias-section" class="screen" style="display: none;">
+            <h2>¡EXPLORACIÓN COMPLETADA! 🌌💙✨</h2>
             
-            <div class="card-box">
-                <p class="quiz-question">1. ¿Qué provoca que el tiempo transcurra más lento en ciertas regiones?</p>
-                <label class="quiz-option"><input type="radio" name="p1" required> Gravedad intensa o velocidades lumínicas.</label>
-                <label class="quiz-option"><input type="radio" name="p1"> La falta de atmósfera en órbita.</label>
+            <div class="thanks-box">
+                <div class="glow-icon">💙✨</div>
+                <h3 id="resultado-score">¡Gracias por completar el test con éxito!</h3>
+                <p>Tienes una excelente comprensión de cómo funciona el espacio, la gravedad y los secretos más profundos del universo.</p>
             </div>
 
-            <div class="card-box">
-                <p class="quiz-question">2. Si pasas 3 horas cerca de un agujero negro masivo, ¿qué ocurre en la Tierra?</p>
-                <label class="quiz-option"><input type="radio" name="p2" required> Transcurren décadas enteras mientras envejeces poco.</label>
-                <label class="quiz-option"><input type="radio" name="p2"> Pasan exactamente 3 horas idénticas.</label>
+            <div class="button-group">
+                <a href="index.html" class="btn btn-blue">🔄 REINICIAR EXPERIENCIA ESTELAR</a>
             </div>
+        </section>
 
-            <div class="btn-group">
-                <a href="informacion.html" class="sci-btn secondary">⬅️ TEORÍAS</a>
-                <button type="submit" class="sci-btn">ENVIAR RESPUESTAS 🚀</button>
-            </div>
-        </form>
     </main>
 
+    <script>
+        function evaluarQuiz(e) {
+            e.preventDefault();
+            document.getElementById('quiz-section').style.display = 'none';
+            document.getElementById('gracias-section').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
