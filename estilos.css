@@ -298,4 +298,4 @@ footer span { color: var(--azul-brillante); font-weight: 700; }
 @media (max-width: 820px) {
   .hero { grid-template-columns: 1fr; }
   h1 { font-size: 1.9rem; }
-}
+  }
